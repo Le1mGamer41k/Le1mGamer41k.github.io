@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформлення заявки</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html"> Головна</a></li>
+            <li><a href="AvailableApartments.html"> Доступні квартири</a></li>
+            <li><a href="#"> Мої бронювання</a></li>
+            <li><a href="Contacts.html"> Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="booking-container">
+    <h1>Оформлення заявки на оренду</h1>
+    <form action="submit_booking.php" method="POST">
+        <label for="name">Ваше ім'я:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="apartment">Обрана квартира:</label>
+        <input type="text" id="apartment" name="apartment" readonly>
+
+        <label for="message">Додаткова інформація:</label>
+        <textarea id="message" name="message"></textarea>
+
+        <button type="submit">Надіслати заявку</button>
+    </form>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const apartmentType = urlParams.get('apartment');
+    if (apartmentType) {
+        document.getElementById('apartment').value = apartmentType;
+    }
+</script>
+
+<footer>
+    <a> Контактна інформація: buhilvy@gmail.com | +38 068 351 1546</a>
+</footer>
+</body>
+</html>
