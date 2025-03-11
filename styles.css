@@ -21,8 +21,8 @@ nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: center; /* Вирівнювання */
-    gap: 20px; /* Відстань між текстом */
+    justify-content: center;
+    gap: 20px;
 }
 
 nav ul li {
@@ -37,23 +37,13 @@ nav ul li a {
 
 /* Головні пункти */
 main {
-    flex: 1; /* Зафулити весь простір */
+    flex: 1;
     display: flex;
-    justify-content: center; /* Центрування горизонталі */
-    align-items: center; /* Центрування вертикалі */
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     text-align: center;
-}
-
-main1 {
-    flex: 1; /* Зафулити весь простір */
-    display: flex;
-    justify-content: center; /* Центрування горизонталі */
-    align-items: center; /* Центрування вертикалі */
-    padding: 10px;
-    text-align: center;
     background: white;
-
 }
 
 /* Контейнер статті */
@@ -66,7 +56,7 @@ article {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Вирівнюємо текст та картинку по центру */
+    align-items: center;
 }
 
 /* Зображення */
@@ -83,7 +73,6 @@ footer {
     text-align: center;
     padding: 25px;
 }
-
 
 .apartment-grid {
     display: flex;
@@ -118,14 +107,6 @@ footer {
     font-size: 16px;
 }
 
-
-gggrid{
-    display: flex;
-    justify-content: center;
-}
-
-
-
 .info-container {
     display: flex;
     justify-content: center;
@@ -148,9 +129,45 @@ gggrid{
 h1 {
     font-size: 20px;
     color: #333;
+    display:flex;
+    justify-content: center;
 }
 
 p {
     font-size: 16px;
-    color: #555;
+    color: #333333;
+}
+
+a {
+    font-size: 20px;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.a2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    cursor: pointer; /* Забезпечує, що кнопка виглядає клікабельною */
+    width: 150px; /* Фіксована ширина */
+    height: 50px; /* Фіксована висота */
+    text-align: center;
+}
+
+.a2:hover {
+    background-color: #333;
 }
