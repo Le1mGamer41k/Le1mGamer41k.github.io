@@ -1,0 +1,236 @@
+body {
+    font-family: "Bradley Hand", cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Шапка сайту */
+header {
+    background: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Навігація */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.auth {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.auth ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Головні пункти */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background: white;
+}
+
+/* Контейнер статті */
+article {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Зображення */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Нижній колонтитул */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.apartment-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.apartment-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 300px;
+    text-align: left;
+}
+
+.apartment-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.apartment-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.apartment-card p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.info-box {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 45%;
+    min-width: 300px;
+    text-align: left;
+}
+
+h1 {
+    font-size: 20px;
+    color: #333;
+    display:flex;
+    justify-content: center;
+}
+
+p {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #333333;
+}
+
+a {
+    font-size: 20px;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.a2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    cursor: pointer; /* Забезпечує, що кнопка виглядає клікабельною */
+    width: 150px; /* Фіксована ширина */
+    height: 50px; /* Фіксована висота */
+    text-align: center;
+}
+
+.a2:hover {
+    background-color: #333;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.booking-list {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.booking-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.booking-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+.booking-item:last-child {
+    border-bottom: none;
+}
+.download-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.download-button:hover {
+    background-color: #0056b3;
+}
