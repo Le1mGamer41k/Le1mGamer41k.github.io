@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Le1mGamer41k/static/css/main.a3deaa86.css",
+    "main.js": "/Le1mGamer41k/static/js/main.789e507b.js",
+    "index.html": "/Le1mGamer41k/index.html",
+    "main.a3deaa86.css.map": "/Le1mGamer41k/static/css/main.a3deaa86.css.map",
+    "main.789e507b.js.map": "/Le1mGamer41k/static/js/main.789e507b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a3deaa86.css",
+    "static/js/main.789e507b.js"
+  ]
+}
