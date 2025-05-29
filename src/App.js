@@ -71,7 +71,7 @@ const App = () => {
         </Routes>
 
         <footer>
-          <a> Контактна інформація: buhilvy@gmail.com | +38 068 351 1546</a>
+          <a> Контактна інформаціяs: buhilvy@gmail.com | +38 068 351 1546</a>
         </footer>
       </Router>
   );
