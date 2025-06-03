@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { db } from '../firebaseConfig';
+import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 import { useAuth } from '../context/AuthContext';
 
 const ApartmentReviews = ({ apartmentId }) => {
@@ -6,46 +8,41 @@ const ApartmentReviews = ({ apartmentId }) => {
     const [reviews, setReviews] = useState([]);
     const [text, setText] = useState('');
 
+    // Функція для отримання відгуків з Firestore
     const fetchReviews = async () => {
         try {
-            const response = await fetch(
-                `${process.env.REACT_APP_API_URL}/api/reviews?flatId=${apartmentId}&page=1`
-            );
-            const data = await response.json();
+            const q = query(collection(db, 'reviews'), where('apartmentId', '==', apartmentId));
+            const snapshot = await getDocs(q);
+            const data = snapshot.docs.map(doc => doc.data());
             setReviews(data);
         } catch (error) {
             console.error('Помилка при завантаженні відгуків:', error);
         }
     };
 
+    // Функція для додавання нового відгуку до Firestore
     const submitReview = async () => {
         if (!text.trim() || !user) return;
-
         try {
-            await fetch(`${process.env.REACT_APP_API_URL}/api/reviews`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    Review: text,
-                    Gmail: user.email,
-                    apartmentId
-                })
+            await addDoc(collection(db, 'reviews'), {
+                Review: text,
+                Gmail: user.email,
+                apartmentId,
+                createdAt: new Date().toISOString()
             });
-
             setText('');
-            fetchReviews();
+            fetchReviews(); // Оновити список відгуків після додавання нового
         } catch (error) {
-            console.error('Помилка при надсиланні відгуку:', error);
+            console.error('Помилка при додаванні відгуку:', error);
         }
     };
 
+    // Виклик fetchReviews при завантаженні компонента або зміні apartmentId
     useEffect(() => {
         if (user) {
             fetchReviews();
         }
-    }, [user]);
+    }, [user, apartmentId]);
 
     return (
         <div style={{ marginTop: '30px' }}>

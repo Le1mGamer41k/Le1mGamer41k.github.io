@@ -1,4 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+server/serviceAccountKey.json
 
 # dependencies
 /node_modules
@@ -22,4 +23,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-server/orenda-platform-firebase-adminsdk-fbsvc-7701411953.json
