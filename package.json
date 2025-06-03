@@ -2,7 +2,7 @@
   "name": "lab333",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Le1mGamer41k.github.io/Le1mGamer41k",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
