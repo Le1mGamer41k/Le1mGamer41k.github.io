@@ -11,7 +11,7 @@ import ApartmentReviews from "./ApartmentsReviews";
 const AvailableApartments = () => {
     const [sortType, setSortType] = useState("none");
     const [booked, setBooked] = useState([]);
-    const { user } = useAuth();
+   // const {user} = useAuth(); //
 
     const apartments = [
         {

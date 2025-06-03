@@ -28,7 +28,7 @@ const ApartmentReviews = ({ apartmentId }) => {
 
     useEffect(() => {
         if (user) fetchReviews();
-    }, [user]);
+    }, [fetchReviews]);
 
     return (
         <div style={{ marginTop: '30px' }}>
