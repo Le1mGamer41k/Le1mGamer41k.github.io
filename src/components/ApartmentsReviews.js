@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { db } from '../firebaseConfig';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { useAuth } from '../context/AuthContext';
 
 const ApartmentReviews = ({ apartmentId }) => {
@@ -9,26 +7,45 @@ const ApartmentReviews = ({ apartmentId }) => {
     const [text, setText] = useState('');
 
     const fetchReviews = async () => {
-        const snapshot = await getDocs(collection(db, 'reviews'));
-        const data = snapshot.docs.map(doc => doc.data()).filter(r => r.apartmentId === apartmentId);
-        setReviews(data);
+        try {
+            const response = await fetch(
+                `${process.env.REACT_APP_API_URL}/api/reviews?flatId=${apartmentId}&page=1`
+            );
+            const data = await response.json();
+            setReviews(data);
+        } catch (error) {
+            console.error('Помилка при завантаженні відгуків:', error);
+        }
     };
 
     const submitReview = async () => {
         if (!text.trim() || !user) return;
-        await addDoc(collection(db, 'reviews'), {
-            Review: text,
-            Gmail: user.email,
-            apartmentId,
-            createdAt: new Date().toISOString()
-        });
-        setText('');
-        fetchReviews();
+
+        try {
+            await fetch(`${process.env.REACT_APP_API_URL}/api/reviews`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    Review: text,
+                    Gmail: user.email,
+                    apartmentId
+                })
+            });
+
+            setText('');
+            fetchReviews();
+        } catch (error) {
+            console.error('Помилка при надсиланні відгуку:', error);
+        }
     };
 
     useEffect(() => {
-        if (user) fetchReviews();
-    }, [fetchReviews]);
+        if (user) {
+            fetchReviews();
+        }
+    }, [user]);
 
     return (
         <div style={{ marginTop: '30px' }}>
